@@ -1,0 +1,25 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>Creating ViewModels with observables</title>
+		<script src = "https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.1.0.js" 
+   type = "text/javascript"></script>
+	</head>
+	<body>
+      <!--data-bind="value: FirstName"   it is a declarative binding-->
+		FirstName: <input type="text" name="txtFirstName" data-bind="value: FirstName"><br><br> 
+      LastName: <input type="text" name="txtLastName" data-bind="value: LastName"><br><br>
+      FullName is <span data-bind="text: FullName">
+	  <script>
+         var MyViewModel = function(fName, lName){
+            this.FirstName = ko.observable(fName); //create an observable
+            this.LastName = ko.observable(lName);
+            this.FullName = ko.computed(function(){
+               return this.FirstName() + " " + this.LastName()
+            },this)        
+             }
+             ko.applyBindings(new MyViewModel("Afsha", "Mohammed")) //Bind the viewModel to the view
+
+     </script>
+	</body>
+</html>
