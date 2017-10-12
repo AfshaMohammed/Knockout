@@ -1,0 +1,24 @@
+<!Doctype html>
+<html>
+	<title>Two-Way Binding using Observables</title>
+	<script src = "https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.1.0.js" 
+   type = "text/javascript"></script>
+	<body>
+		Account Holder ID <input type="text" data-bind="value: ID"><br>
+		Account Holder Name: <input type="text" data-bind="value: Name"><br>
+		Account Branch Name: <input type="text" data-bind="value: Branch"><br>
+		<span data-bind="text: AccountDetails"></span>
+		<script>
+			var myAccountDetails = function(id, name, branch){
+				this.ID = ko.observable(id);
+				this.Name = ko.observable(name);
+				this.Branch = ko.observable(branch);
+				this.AccountDetails = ko.computed(function(){
+					return "Account Holder ID is " + this.ID() + " Name is " + this.Name() +  " and Branch name is " + this.Branch();
+				},this)
+			};
+			ko.applyBindings(new myAccountDetails(258, 'Afsha', 'Guntur'))
+		</script>
+
+	</body>
+</html>
