@@ -1,0 +1,20 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>View Model</title>
+		<script src = "https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.1.0.js" 
+   type = "text/javascript"></script>
+	</head>
+	<body>
+		<p>It is a pure code representation of data and operations on a UI</p>
+		My full name is <span data-bind = "text: firstName + ' ' + lastName"></span>
+		<script>
+		var myDetails = {
+		  firstName: 'Afsha',
+		  lastName: 'Mohammed'
+		};
+		ko.applyBindings(myDetails);
+
+</script>
+	</body>
+</html>
