@@ -1,0 +1,25 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>Observable Arrays</title>
+		<script src = "https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.1.0.js" 
+   type = "text/javascript"></script>
+	</head>
+	<body>
+
+		<script>
+			var MyArray = ko.observableArray(['Orange', 'Banana', 'Apple', 'Grapes']);
+			this.MyArray().push('Mango');
+			alert("The second value is " + MyArray()[1]);
+			alert("The length of array is " + MyArray().length);
+			alert("My array values are " + MyArray());
+			this.MyArray().pop('Mango');
+			alert("My array values are " + MyArray());
+			this.MyArray().unshift("Mango");
+			alert("My array values are " + MyArray());
+			this.MyArray().shift('Mango');
+			alert("My array values are " + MyArray());
+
+		</script>
+	</body>
+</html>
